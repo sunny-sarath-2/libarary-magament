@@ -1,0 +1,15 @@
+.react-table-center {
+  text-align: center;
+}
+.width-full {
+  width: 100%;
+}
+.float-right {
+  float: right;
+}
+.mrb-1 {
+  margin-bottom: 1em !important;
+}
+.error-test {
+  color: brown !important;
+}
