@@ -12,7 +12,7 @@ exports.createTestUsers = async (req, res) => {
     let name = fakeUser.firstName;
     let user = {
       username: name.toLowerCase(),
-      password: md5(123),
+      password: md5("123"),
       email: fakeUser.email,
       type: fakerator.times(fakerator.random.number, 1, 1, 2)[0],
       status: true,
