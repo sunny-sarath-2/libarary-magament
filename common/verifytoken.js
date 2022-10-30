@@ -6,9 +6,15 @@ exports.verify_token = async (req, res, next) => {
     const bearer = bearerHeader.split(" ");
     const bearerToken = bearer[1];
     req.token = bearerToken;
-    let result = await jwt.verify(bearerToken, "secret");
-    // console.log(result);
-    next();
+    try {
+      let result = await jwt.verify(bearerToken, "secret");
+      next();
+    } catch (error) {
+      res.status(401).json({
+        result: [],
+        message: error,
+      });
+    }
   } else {
     // Forbidden
     res.sendStatus(403);
