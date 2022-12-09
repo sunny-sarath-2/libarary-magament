@@ -1,10 +1,10 @@
 const user_model = require("../model/users.model");
 
-exports.login_verify_service = async ({ username, password }) => {
+exports.login_verify_service = async ({ email, password }) => {
   return await user_model.aggregate([
     {
       $match: {
-        username,
+        email,
         password,
         status: true,
       },
